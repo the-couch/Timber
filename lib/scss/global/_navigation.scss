@@ -1,0 +1,221 @@
+$mobile: 880px;
+
+.container {
+  padding-top: 60px;
+}
+
+.header {
+  background: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  &--home {
+    position: relative;
+    .header--links {
+
+      transform: translateY(-900px);
+    }
+  }
+  a {
+    @include biancoSansBold;
+    color: black;
+    padding: 3px 18px;
+    font-size: 1.28rem;
+    &:hover {
+      color: $gold;
+    }
+  }
+  &--wrapper {
+    max-width: $max;
+    margin: 0 auto;
+    z-index: 10;
+    position: relative;
+    background: white;
+    @include respond-at-and-above($break-medium) {
+      padding: 4px 20px 0;
+    }
+  }
+  &--navigation {
+    padding: 6px 8px;
+    // padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    background: white;
+    min-height: 66px;
+    justify-content: space-between;
+
+
+  }
+
+  &--links {
+    @include transition(all .25s);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 62px;
+    z-index: -1;
+    background: $green;
+    text-align: center;
+    padding: 50px 0;
+    opacity: 0;
+    transform: translateY(-400px);
+    &.open {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    a {
+      display: block;
+      padding: 10px;
+      font-size: 1.9rem;
+    }
+    &-desktop {
+      display: none;
+      @include respond-at-and-above($mobile) {
+        display: block;
+      }
+    }
+  }
+  &--logo {
+    // position: relative;
+    svg {
+      width: 46px;
+      height: 46px;
+      padding: 2px;
+    }
+    li {
+      width: 46px;
+      height: 46px;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      &.active {
+        opacity: 1;
+      }
+    }
+    a {
+      padding: 0;
+      position: absolute;
+      width: 46px;
+      height: 46px;
+      z-index: 4;
+      top: 10px;
+      left: 20px;
+    }
+    &.paused {
+      li {
+        opacity: 0;
+        &:first-child {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+  &--toggle {
+    @include transition(all .25s);
+    width: 40px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // overflow: hidden;
+    cursor: pointer;
+    @include respond-at-and-above($mobile) {
+      display: none;
+    }
+    &.open {
+      transform: rotate(45deg);
+      .header--toggle-lines {
+        // width: 40px;
+        &:after {
+          opacity: 0;
+        }
+        &:before {
+          transform: rotate(90deg);
+          // top: 0;
+          top: 20px;
+          // width: 50px;
+        }
+      }
+    }
+    &-lines {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      top: 0px;
+      &:before {
+        @include transition(all .25s);
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: black;
+        position: absolute;
+        left: 0;
+        top: 34px;
+      }
+      &:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: black;
+        position: absolute;
+        left: 0;
+        top: 10px;
+      }
+    }
+  }
+
+  &--apply {
+    right: 70px;
+    position: relative;
+    svg {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  &--signin {
+    position: relative;
+    left: 10px;
+    svg {
+
+        @include transition(all .25s);
+    }
+    a {
+      &:hover {
+        svg {
+          stroke: $pink;
+        }
+      }
+    }
+  }
+  &--apply {
+    a {
+      position: absolute;
+      display: inline-block;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      .apply--hover {
+        @include transition(all .25s);
+      }
+      &:hover {
+        .apply--hover {
+          fill: $green;
+        }
+      }
+    }
+    // svg {
+    //   position: absolute;
+    //   right: 0;
+    //   top: -10px;
+    // }
+  }
+}

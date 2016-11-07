@@ -1,0 +1,45 @@
+.happenings {
+  &--events {
+    &-wrapper {
+      padding: 30px 20px;
+      max-width: $inner - 200;
+      margin: 0 auto;
+      @include respond-at-and-above($break-small) {
+        display: flex;
+        justify-content: flex-start;
+        padding: 60px 20px;
+        flex-wrap: wrap;
+      }
+    }
+    &-single {
+      @include respond-at-and-above($break-small) {
+        margin-bottom: 30px;
+        width: 50%;
+        &-wrapper {
+          display: flex;
+        }
+        &-image {
+          max-width: 200px;
+        }
+        &-copy {
+          max-width: 180px;
+          padding: 20px;
+          h3 {
+            font-size: 1.2rem;
+          }
+          a {
+            color: black;
+          }
+        }
+      }
+
+      @include respond-at-and-above($break-medium) {
+        // width: 500px;
+
+        &-image {
+          max-width: 240px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.btn {
+  @include transition(all .25s);
+  @include biancoSansBold;
+  text-transform: uppercase;
+  color: $gold;
+  // border: 2px solid $gold;
+  padding: 16px 90px;
+  margin: 30px auto;
+  display: inline-block;
+  position: relative;
+  &:before {
+    @include transition(all .25s);
+    position: absolute;
+    width: calc(100% + 20px);
+    height: calc(100% + 1px);
+    content: '';
+    border: 2px solid $gold;
+    left: -12px;
+    top: -2px;
+    z-index: 2;
+  }
+  &:after {
+    @include transition(all .25s);
+    position: absolute;
+    width: calc(100% + 0px);
+    height: calc(100% + 14px);
+    content: '';
+    border: 2px solid #D28C0E;
+    left: -2px;
+    top: -9px;
+    z-index: 2;
+  }
+  &:hover {
+    // color: white;
+    background: $litepink;
+  }
+  @include respond-at-and-above($break-medium) {
+    font-size: 1.8rem;
+  }
+}

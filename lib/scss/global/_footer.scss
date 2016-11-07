@@ -1,0 +1,78 @@
+.footer {
+  background: $pink;
+  padding:  40px 20px 20px;
+  position: relative;
+  @include respond-at-and-above(700px) {
+
+    padding:  60px 20px 40px;
+  }
+  &--wings {
+    text-align: center;
+    padding: 14px 0 30px;
+    &.header--logo li {
+      left: 50%;
+      top: 26px;
+      transform: translateX(-50%);
+    }
+    @include respond-at-and-above(700px) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      &.header--logo li {
+        top: 0px;
+      }
+    }
+  }
+  &--logo {
+    text-align: center;
+    @include respond-at-and-above(700px) {
+      position: absolute;
+      width: 300px;
+      left: 50%;
+      margin-left: -150px;
+      bottom: 90px;
+      svg {
+        width: 240px;
+        height: 20px;
+      }
+    }
+  }
+  p {
+    @include biancoSerifBold;
+    font-size: 1rem;
+    a {
+      color: black;
+    }
+  }
+  &--share {
+    padding-top: 6px;
+    padding-bottom: 0px;
+    a {
+      display: inline-block;
+      margin-right: 14px;
+    }
+    @include respond-at-and-above(400px) {
+      a {
+        margin-left: 14px;
+        margin-right: 0;
+      }
+    }
+  }
+  &--wrapper {
+    padding: 30px 0;
+    max-width: $inner;
+    margin: 0 auto;
+    @include respond-at-and-above(400px) {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+  &--right {
+    @include respond-at-and-above(400px) {
+      text-align: right;
+    }
+  }
+  &--text {
+    width:50%;
+  }
+}
